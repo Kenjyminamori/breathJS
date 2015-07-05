@@ -80,7 +80,7 @@ $(document).ready(function () {
     // Поместить таймер внутрь круга
     x = $("#main").offset().left + $("#main").width() / 2 - $('#time').width() / 2;
     y = $("#main").offset().top + $("#main").height() / 2 - $('#time').height()/2 -2 ;
-
+    console.log('Высота блока #time:' + $('#time').height());
     $("#time").offset({left: x, top: y});
 
     // Поместить статусбар
@@ -113,7 +113,7 @@ $(document).ready(function () {
     // Поместить START
     x = $("#main").offset().left + $("#main").width() / 2 - $("#start").width() / 2;
     y = $("#main").offset().top - $('#start').height() - 25;
-    alert($('#start').height());
+    console.log('Высота блока #start:' + $('#start').height());
     $("#start").offset({left: x, top: y});
 
     // Поместить RESET
