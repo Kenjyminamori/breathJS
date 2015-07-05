@@ -132,6 +132,7 @@ $(document).ready(function () {
     $(".footer").css('width', $("#main").css('width'));
     y = $("#minus").offset().top + $('#minus').height() + $('.footer').height() + parseInt($(".footer").css('margin-top'));
     $(".footer").offset({left: x, top: y});
+    $('#loading_screen').remove();
 
     //	Автомат --------------------------------------------------------------------------------------------------------
     //	Контроллер автомата
