@@ -24,7 +24,7 @@ body {
 	text-align: center;
 	font-size: 73pt;
 	width: 294px;
-	/*height: 102px;*/
+	height: 116px;
     color: #483141;
 	/*background-color: #FF99C2;*/
 }
@@ -90,6 +90,7 @@ body {
 	padding-bottom: 5px;
 	margin: 2px;
 	width: 60px;
+	height: 19px;
 	/*border-radius: 5px;*/
 	color: white;
 	vertical-align: middle;
