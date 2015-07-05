@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            var time_holder
+            var i=0;
+            function tik(){
+                i++;
+                var name='chick'+i;
+                document.getElementById(name).play();
+                if (i==3){
+                    i=0;
+                }
+
+
+            }
+            $('#go').click(function(){
+                tik();
+                time_holder = setInterval(tik,500);
+                });
+            $('#stop').click(function(){
+                clearInterval(time_holder);
+                });
+
+        });
+
+    </script>
+</head>
+<body>
+<audio id="chick1" src="audio/chik.mp3"></audio>
+<audio id="chick2" src="audio/chik.mp3"></audio>
+<audio id="chick3" src="audio/chik.mp3"></audio>
+
+<audio id="chock1" src="audio/chok.mp3"></audio>
+<audio id="chock2" src="audio/chok.mp3"></audio>
+<audio id="chock3" src="audio/chok.mp3"></audio>
+
+<audio id="peep1" src="audio/peep.mp3"></audio>
+<audio id="peep2" src="audio/peep.mp3"></audio>
+<audio id="peep3" src="audio/peep.mp3"></audio>
+
+<audio id="poop1" src="audio/poop.mp3"></audio>
+<audio id="poop2" src="audio/poop.mp3"></audio>
+<audio id="poop3" src="audio/poop.mp3"></audio>
+<div>
+    <button id="go">go</button>
+    <button id="stop">stop</button>
+    <button onclick="document.getElementById('chick1').play()">Chick1</button>
+    <button onclick="document.getElementById('chick2').play()">Chick2</button>
+    <button onclick="document.getElementById('chick3').play()">Chick3</button>
+    <button onclick="document.getElementById('chock').play()">chock</button>
+    <button onclick="document.getElementById('peep').play()">peep</button>
+    <button onclick="document.getElementById('poop').play()">poop</button>
+</div>
+</body>
+</html>
