@@ -113,6 +113,7 @@ $(document).ready(function () {
     // Поместить START
     x = $("#main").offset().left + $("#main").width() / 2 - $("#start").width() / 2;
     y = $("#main").offset().top - $('#start').height() - 25;
+    alert($('#start').height());
     $("#start").offset({left: x, top: y});
 
     // Поместить RESET
