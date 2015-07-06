@@ -14,25 +14,54 @@
 
 <body>
 <div id="loading_screen"> Loading </div>
-<audio id="chick1" src="audio/chik.mp3"></audio>
-<audio id="chick2" src="audio/chik.mp3"></audio>
-<audio id="chick3" src="audio/chik.mp3"></audio>
-<audio id="chock1" src="audio/chok.mp3"></audio>
-<audio id="chock2" src="audio/chok.mp3"></audio>
-<audio id="chock3" src="audio/chok.mp3"></audio>
-<audio id="peep1" src="audio/peep.mp3"></audio>
-<audio id="peep2" src="audio/peep.mp3"></audio>
-<audio id="peep3" src="audio/peep.mp3"></audio>
-<audio id="poop1" src="audio/poop.mp3"></audio>
-<audio id="poop2" src="audio/poop.mp3"></audio>
-<audio id="poop3" src="audio/poop.mp3"></audio>
+<audio id="chick1">
+    <source src="audio/chik.mp3" type="audio/mpeg">
+    <source src="audio/chik.ogg" type="audio/ogg; codecs=vorbis"></audio>
+
+<audio id="chick2">
+    <source src="audio/chik.mp3" type="audio/mpeg">
+    <source src="audio/chik.ogg" type="audio/ogg; codecs=vorbis"></audio>
+
+<audio id="chick3" >
+    <source src="audio/chik.mp3" type="audio/mpeg">
+    <source src="audio/chik.ogg" type="audio/ogg; codecs=vorbis"></audio>
+
+<audio id="chock1">
+    <source src="audio/chok.mp3" type="audio/mpeg">
+    <source src="audio/chok.ogg" type="audio/ogg; codecs=vorbis"></audio>
+<audio id="chock2">
+    <source src="audio/chok.mp3" type="audio/mpeg">
+    <source src="audio/chok.ogg" type="audio/ogg; codecs=vorbis"></audio>
+<audio id="chock3">
+    <source src="audio/chok.mp3" type="audio/mpeg">
+    <source src="audio/chok.ogg" type="audio/ogg; codecs=vorbis"></audio>
+
+<audio id="peep1">
+    <source src="audio/peep.mp3" type="audio/mpeg">
+    <source src="audio/peep.ogg" type="audio/ogg; codecs=vorbis"></audio>
+<audio id="peep2">
+    <source src="audio/peep.mp3" type="audio/mpeg">
+    <source src="audio/peep.ogg" type="audio/ogg; codecs=vorbis"></audio>
+<audio id="peep3">
+    <source src="audio/peep.mp3" type="audio/mpeg">
+    <source src="audio/peep.ogg" type="audio/ogg; codecs=vorbis"></audio>
+
+<audio id="poop1">
+    <source src="audio/poop.mp3" type="audio/mpeg">
+    <source src="audio/poop.ogg" type="audio/ogg; codecs=vorbis"></audio>
+<audio id="poop2">
+    <source src="audio/poop.mp3" type="audio/mpeg">
+    <source src="audio/poop.ogg" type="audio/ogg; codecs=vorbis"></audio>
+<audio id="poop3">
+    <source src="audio/poop.mp3" type="audio/mpeg">
+    <source src="audio/poop.ogg" type="audio/ogg; codecs=vorbis"></audio>
 
 <div id="mode_control">
-<div class="button mode" id = "mode8">8</div>
-<div class="button mode" id = "mode16">16</div>
-<div class="button mode" id = "mode32">32</div>
-<div class="button mode" id = "mode48">48</div>
-<div class="button mode" id = "mode96">96</div>
+    <div class="button mode" id = "mode8"> 8 </div>
+    <div class="button mode" id = "mode16">16</div>
+    <div class="button mode" id = "mode32">32</div>
+    <div class="button mode" id = "mode48">48</div>
+    <div class="button mode" id = "mode96">96</div>
 </div>
 
 <div class="selector" id="speed"></div>
@@ -42,8 +71,10 @@
 <div class="arrows" id="minus"><</div>
 <br>
 
-
-<img src="images/start.svg" id="start">
+<div>
+<img src="images/start.svg" class="start" id = "start_button">
+<img src="images/pause.svg" class="start" id = "pause_button">
+</div>
 <img src = "images/rotate.svg" id = "reset">
 
 <div id="time">00:00</div>

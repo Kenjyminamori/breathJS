@@ -111,10 +111,16 @@ $(document).ready(function () {
     $("#plus").offset({left: x, top: y});
 
     // Поместить START
-    x = $("#main").offset().left + $("#main").width() / 2 - $("#start").width() / 2;
-    y = $("#main").offset().top - $('#start').height() - 25;
-    console.log('Высота блока #start:' + $('#start').height());
-    $("#start").offset({left: x, top: y});
+    x = $("#main").offset().left + $("#main").width() / 2 - $("#start_button").width()/2;
+    y = $("#main").offset().top - $('#start_button').height()-25;
+    console.log('Высота блока #start_button:' + $('#start_button').height());
+    console.log('Положение блока "старт":(' + x + ',' + y + ')');
+    $("#start_button").offset({left: x, top: y});
+    //$("#start_button").css('position','absolute');
+
+    // Поместить PAUSE
+    $("#pause_button").offset({left: x, top: y});
+
 
     // Поместить RESET
     x = $("#main").offset().left + $("#main").width() / 2 - $("#reset").width() / 2;
@@ -127,12 +133,14 @@ $(document).ready(function () {
     $("#mode_control").offset({left: x, top: y});
     $(default_mode).addClass("button_focus");
 
-    // Поместит Footer
+    // Поместить Footer
     x = $("#main").offset().left;
     $(".footer").css('width', $("#main").css('width'));
     y = $("#minus").offset().top + $('#minus').height() + $('.footer').height() + parseInt($(".footer").css('margin-top'));
     $(".footer").offset({left: x, top: y});
     $('#loading_screen').remove();
+    $('#round1').addClass("round_focus");
+
 
     //	Автомат --------------------------------------------------------------------------------------------------------
     //	Контроллер автомата
@@ -164,13 +172,14 @@ $(document).ready(function () {
     function waiting() {
         // Простой перед запуском
         $('#time').html('00:00');
-        $('#status_bar').html('Нажмите START для начала');
+        $('#status_bar').html('Нажмите СТАРТ для начала');
 
     }
 
     function beginning() {
         // Первый отсчет
         begin_count--;
+
 
         $('#time').html(begin_count);
         $('#status_bar').html('Приготовьтесь');
@@ -189,7 +198,7 @@ $(document).ready(function () {
         count++;
         сhick();
         $('#time').html(convert(count, count_mult));
-        $('#start').html('Пауза');
+        $('.start').html('Пауза');
         $('#status_bar').html('');
         num = count + 1;
         $("#round" + num).addClass('round_focus');
@@ -222,7 +231,7 @@ $(document).ready(function () {
         rest_count = 0;
         begin_count = 4;
         status = 'wait';
-        $('#start').html('Старт');
+        $('.start').html('Старт');
         $('#time').html('00:00');
         reset_circle(1, amount_of_points);
     }
@@ -250,20 +259,25 @@ $(document).ready(function () {
     //	Кнопка паузы
     $(document).on('ready', function () {
         if (status = 'wait') {
-            $('#start').html('Старт');
+            $('#start_button').css('visibility','visible');
+            $('#pause_button').css('visibility','hidden');
         }
-        $('#start').click(function () {
+        $('.start, #time').click(function () {
             if (status == 'wait') {
                 status = 'begin';
-                $('#start').html('Пауза');
+
             } else {
                 if (status != 'pause') {
                     status_buffer = status;
                     status = 'pause';
-                    $('#start').html('Дальше');
+                    $('#start_button').css('visibility','hidden');
+                    $('#pause_button').css('visibility','visible');
+                    $('#time').css('color','#A52929');
                 } else {
                     status = status_buffer;
-                    $('#start').html('Пауза');
+                    $('#time').css('color','#483141');
+                    $('#start_button').css('visibility','visible');
+                    $('#pause_button').css('visibility','hidden');
                 }
             }
         });
@@ -379,6 +393,7 @@ $(document).ready(function () {
             $("#round" + count).css({"position": "absolute"});
             phi += 360 / amount_of_points;
         }
+
     }
 
     //	Эффектно обнуляет счетчик. Анимация обнуления точек таймера

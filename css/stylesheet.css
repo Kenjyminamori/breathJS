@@ -23,9 +23,12 @@ body {
 #time {
 	text-align: center;
 	font-size: 73pt;
-	width: 294px;
+	width: 200px;
 	height: 116px;
     color: #483141;
+	z-index:10;
+	user-select: none;
+	cursor: pointer;
 	/*background-color: #FF99C2;*/
 }
 
@@ -104,17 +107,20 @@ body {
 	cursor: pointer;
 }
 .button_focus {
-	background-color: brown;
+	background-color: #A52929;
 }
 .arrows {
 	position: absolute;
 	width: 25px;
 }
-#start{
-	width: 120px;
-    /*height: 40px;*/
-	font-size: 24pt;
+.start {
+	width: 76px;
+	height: 39px;
+	top: 0px;
+	left: 0px;
+	position:absolute;
 }
+
 #reset {
 	position: absolute;
 	width: 35px;
@@ -138,7 +144,7 @@ body {
 	margin-top: 40px;
 }
 
-.round,.round_focus,.round_mult,.selector, {
+.round,.round_focus,.round_mult,.selector, .start, #reset {
 	cursor: pointer;
 }
 .test,.monitor,.round,.round_focus,.round_mult,.selector,#main,#time, body, div {
