@@ -93,7 +93,10 @@ $(document).ready(function () {
     x = $("#main").offset().left;
     y = $("#main").offset().top + $('#main').height() + parseInt($("#speed").css('margin-top'));
     $("#speed").offset({left: x, top: y});
+    y+=9;
+    $("#decor-stripe-selector").offset({left: x, top: y});
     $("#speed").css("width", $('#main').width());
+    $("#decor-stripe-selector").css("width", $('#main').width());
 
     /*	// Поместить монитор скорости под круг
      x = $("#main").offset().left + $("#speed" ).slider( "option", "value" )*( $("#main").width()/max_speed) - 10;
@@ -112,7 +115,7 @@ $(document).ready(function () {
 
     // Поместить START
     x = $("#main").offset().left + $("#main").width() / 2 - $("#start_button").width()/2;
-    y = $("#main").offset().top - $('#start_button').height()-25;
+    y = $("#main").offset().top - $('#start_button').height()-20;
     console.log('Высота блока #start_button:' + $('#start_button').height());
     console.log('Положение блока "старт":(' + x + ',' + y + ')');
     $("#start_button").offset({left: x, top: y});
@@ -124,11 +127,11 @@ $(document).ready(function () {
 
     // Поместить RESET
     x = $("#main").offset().left + $("#main").width() / 2 - $("#reset").width() / 2;
-    y = $("#time").offset().top + $('#time').height() / 2 + 60;
+    y = $("#time").offset().top + $('#time').height() / 2 + 70;
     $("#reset").offset({left: x, top: y});
 
     // Панель управления режимами
-    x = $("#main").offset().left - $(".mode").width() - 10;
+    x = $("#main").offset().left - $(".mode").width() - 20;
     y = $("#main").offset().top + $('#main').height() / 2 - $('#mode_control').height() / 2;
     $("#mode_control").offset({left: x, top: y});
     $(default_mode).addClass("button_focus");
@@ -172,7 +175,7 @@ $(document).ready(function () {
     function waiting() {
         // Простой перед запуском
         $('#time').html('00:00');
-        $('#status_bar').html('Нажмите СТАРТ для начала');
+        $('#status_bar').html('Нажмите "СТАРТ", чтобы начать');
 
     }
 
@@ -294,11 +297,11 @@ $(document).ready(function () {
 
     // Нажатие кнопок 8, 16, 32 и т.д
     var last = $(default_mode);
-    $(document).on('ready', function () {
+   // $(document).on('ready', function () {
         $('.mode').click(function () {
             $(last).removeClass('button_focus');
-            $(event.target).addClass('button_focus');
-            last = $(event.target);
+            $(this).addClass('button_focus');
+            last = $(this);
             status = 'reset';
             count_mult = parseInt($(this).html());
             makeCircle();
@@ -306,7 +309,7 @@ $(document).ready(function () {
             time_holder = setInterval(tick, 50);
 
         });
-    });
+    //});
 
     // Изменение скорости кнопками <, >
     $(document).on('ready', function () {

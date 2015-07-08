@@ -5,7 +5,8 @@
     <title>BreathJS</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:500,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-
+    <script src="js/jquery-2.1.0.min.js" defer ></script>
+    <script src="jquery-ui-1.11.4.custom/jquery-ui.js" defer ></script>
     <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
@@ -65,10 +66,11 @@
 </div>
 
 <div class="selector" id="speed"></div>
+<div id="decor-stripe-selector"></div>
 <div id="speed_monitor"></div>
 
-<div class="arrows" id="plus">></div>
-<div class="arrows" id="minus"><</div>
+<div class="arrows" id="plus"><img src="images/arrowright.svg"> </div>
+<div class="arrows" id="minus"><img src="images/arrowleft.svg"> </div>
 <br>
 
 <div>
@@ -82,11 +84,34 @@
 
 <br>
 
-<div id="main">
+<div id="main"></div>
+
+<div id="info">
+    <h1>
+        BreathJS
+    </h1>
+    <i>8 июля 2015</i>
+    <p>
+    Приложение BreathJS будет вести для вас подсчет при выполнении дыхательных упражнений пободно ведущему утренней зарядки.
+    </p>
+    <p>Выставляйте комфортную скорость ползунком и переключайте количество отсчетов в одном подходе </p>
+    <p>Со временем BreathJS станет лучше, а пока приложение работает в следующих браузерах:</p>
+    <ul>
+        <li> <a href="https://www.google.ru/chrome/browser/desktop/">GoogleChrome</a>  - лучшая совместимость;</li>
+        <li> <a href="https://www.mozilla.org/ru/firefox/new/">FireFox</a>  - должно работать нормально;    </li>
+        <li> <a href="https://play.google.com/store/apps/details?id=org.mozilla.firefox&hl=ru">FireFox для Android</a> - с горем пополам;       </li>
+        <li> <a href="https://play.google.com/store/apps/details?id=org.mozilla.firefox&hl=ru">GoogleChrome для Android</a> - куча глюков, нет звука, надеюсь, когда-нибудь я это исправлю;       </li>
+    </ul>
+
+    <br>
+    Если вы заметите ошибки в работе приложения, пожалуйста, напишите об этом мне на электронную почту<a href="mailto:mikhailnatalenko@ya.ru">
+    mikhailnatalenko@ya.ru</a>
+    <p style="text-align:right"> <i>Михаил</i></p>
+
 </div>
 
 <div class="footer"> Наталенко Михаил. 2015</div>
-<script src="js/jquery-2.1.0.min.js" defer ></script>
-<script src="jquery-ui-1.11.4.custom/jquery-ui.js" defer ></script>
-<script src="js/action.js" defer ></script>
+
+
+<script language="JavaScript" type="text/javascript" src="js/action.js" defer ></script>
 </body>

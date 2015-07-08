@@ -3,8 +3,8 @@
     src: url("../fonts/BebasNeue Regular.otf") /* EOT file for IE */
 }
 @font-face {
-    font-family: Bebas;
-    src: url("../fonts/BebasNeue Regular.otf") /* TTF file for CSS3 browsers */
+    font-family: BebasLight;
+    src: url("../fonts/BebasNeue Light.otf") /* TTF file for CSS3 browsers */
 }
 
 body {
@@ -47,15 +47,18 @@ body {
 	position: absolute;
 }
 
+.ui-slider-handle{
+	background: url("/images/slider.png");
+}
 #speed_monitor{
 	position:absolute;
-	width: 40px;
+	/*width: 40px;*/
 	height: 30px;
 	border-radius: 5px;
-	background-color: #ffe8e8;
+	/*background-color: #ffe8e8;*/
 	text-align: center;
 	font-size: 18pt;
-	border: 1px solid #FF99C2;
+	/*border: 1px solid #FF99C2;*/
 }
 
 
@@ -89,17 +92,21 @@ body {
 
 /* Кнопки */
 .button, .arrows {
-	padding-top: 5px;
-	padding-bottom: 5px;
 	margin: 2px;
-	width: 60px;
-	height: 19px;
-	/*border-radius: 5px;*/
-	color: white;
-	vertical-align: middle;
-
-	text-align: center;
+	width: 43px;
+	height: 30px;
 	background-color: #6E243E;
+
+	line-height: 30px;
+
+	font-family: BebasLight;
+	font-weight: 800;
+	font-size: 14pt;
+	text-align: center;
+	color: white;
+
+
+
 	-moz-user-select: none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
@@ -111,7 +118,8 @@ body {
 }
 .arrows {
 	position: absolute;
-	width: 25px;
+	width: 30px;
+	height: 30px;
 }
 .start {
 	width: 76px;
@@ -137,8 +145,17 @@ body {
 }
 
 
+#info {
+	font-family: 'Roboto', sans-serif;
+	font-size: 10pt;
+	position: absolute;
+	left:550px;
+	top: 40px;
+	width:400px;
+}
+
 .footer{
-	color: #6e7777;
+	color: #b9c6c6;
 	font-size: 10pt;
 	text-align: right;
 	margin-top: 40px;
@@ -154,7 +171,6 @@ body {
 	user-select: none;
 }
 
-
 .monitor {
 	height: 50px;
 	width: 50px;
@@ -165,3 +181,21 @@ body {
 	border-radius: 5px;
 	background-color: #66FF33;
 }
+.ui-widget-content{
+	height: 20px;
+	border-radius: 0px;
+	background: none;
+	border: none;
+
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+	width: 10px;
+	background:  url("slider.png") no-repeat;
+	border: none;
+	margin-top: 5px;
+}
+#decor-stripe-selector{
+	background: #6E243E;
+	height: 3px;
+}
+
